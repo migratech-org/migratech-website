@@ -80,17 +80,20 @@ params:
       url: "https://www.youtube.com/@migratech"
     - name: substack
       url: "https://migratech.substack.com/"
+    - name: telegram
+      url: "https://t.me/migratechorg"
     - name: github
       url: "https://github.com/migratech-org"
-    - name: telegram
-      url: "https://t.me/+LkMpOpzU-dU2ZGYy"
+    - name: linkedin
+      url: "https://www.linkedin.com/company/migratech-org"
+
 #  cover:
 #    hidden: true # hide everywhere but not in structured data
 #    hiddenInList: true # hide on list pages and home
 #    hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/migratech-org/migratech-website/content"
+    URL: "https://github.com/migratech-org/migratech-website/blob/master/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
