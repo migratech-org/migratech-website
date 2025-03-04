@@ -73,7 +73,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: Welcome to MigraTech, a social group to promote BIPoC Tech Professionals based in Berlin.
+    Content: Welcome to MigraTech, a social group to promote Global South Tech Professionals based in Berlin.
 
   socialIcons:
     - name: youtube
