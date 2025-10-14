@@ -1,9 +1,10 @@
 ---
-title: "Meetup #1 - Tech workers rights 101"
+title: "Meetup #7 - Freelancing in Germany for Tech Migrants"
 date: "2025-02-11"
 description: "The first step to a better work environment is knowing your rights."
 tags: []
 ShowToc: true
+events: ["monthly"]
 ---
 
 ## Presentations

@@ -2,7 +2,9 @@ baseURL: https://migratech.org/
 languageCode: en-us
 title: MigraTech
 theme: ["PaperMod"]
-paginate: 5
+
+pagination:
+  pagerSize: 5
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -18,12 +20,13 @@ params:
   title: MigraTech
   description: "MigraTech Website"
   keywords: [Blog, Portfolio, PaperMod]
-#  author: Me
+  #  author: Me
   # author: ["Me", "You"] # multiple authors
-#  images: ["<link or path of image for opengraph, twitter-cards>"]
+  #  images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
+  mainSections: ["events"]
 
   ShowReadingTime: true
   ShowShareButtons: true
@@ -41,14 +44,14 @@ params:
   showtoc: true
   tocopen: false
 
-#  assets:
-#    # disableHLJS: true # to disable highlight.js
-#    # disableFingerprinting: true
-#    favicon: "<link / abs url>"
-#    favicon16x16: "<link / abs url>"
-#    favicon32x32: "<link / abs url>"
-#    apple_touch_icon: "<link / abs url>"
-#    safari_pinned_tab: "<link / abs url>"
+  #  assets:
+  #    # disableHLJS: true # to disable highlight.js
+  #    # disableFingerprinting: true
+  #    favicon: "<link / abs url>"
+  #    favicon16x16: "<link / abs url>"
+  #    favicon32x32: "<link / abs url>"
+  #    apple_touch_icon: "<link / abs url>"
+  #    safari_pinned_tab: "<link / abs url>"
 
   label:
     text: "MigraTech"
@@ -56,24 +59,24 @@ params:
     iconHeight: 35
 
   # profile-mode
-#  profileMode:
-#    enabled: false # needs to be explicitly set
-#    title: ExampleSite
-#    subtitle: "This is subtitle"
-#    imageUrl: "<img location>"
-#    imageWidth: 120
-#    imageHeight: 120
-#    imageTitle: my image
-#    buttons:
-#      - name: Posts
-#        url: posts
-#      - name: Tags
-#        url: tags
+  #  profileMode:
+  #    enabled: false # needs to be explicitly set
+  #    title: ExampleSite
+  #    subtitle: "This is subtitle"
+  #    imageUrl: "<img location>"
+  #    imageWidth: 120
+  #    imageHeight: 120
+  #    imageTitle: my image
+  #    buttons:
+  #      - name: Posts
+  #        url: posts
+  #      - name: Tags
+  #        url: tags
 
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: Welcome to MigraTech, a social group to promote Global South Tech Professionals based in Berlin.
+    Content: Welcome to MigraTech, a social group to promote Global South Tech Professionals based in Berlin and Germany.
 
   socialIcons:
     - name: youtube
@@ -87,10 +90,10 @@ params:
     - name: linkedin
       url: "https://www.linkedin.com/company/migratech-org"
 
-#  cover:
-#    hidden: true # hide everywhere but not in structured data
-#    hiddenInList: true # hide on list pages and home
-#    hiddenInSingle: true # hide on single page
+  #  cover:
+  #    hidden: true # hide everywhere but not in structured data
+  #    hiddenInList: true # hide on list pages and home
+  #    hiddenInSingle: true # hide on single page
 
   editPost:
     URL: "https://github.com/migratech-org/migratech-website/blob/master/content"
@@ -108,16 +111,16 @@ params:
 #    minMatchCharLength: 0
 #    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
 #    keys: ["title", "permalink", "summary", "content"]
-#menu:
-#  main:
-#    - identifier: categories
-#      name: categories
-#      url: /categories/
-#      weight: 10
-#    - identifier: tags
-#      name: tags
-#      url: /tags/
-#      weight: 20
+menu:
+  main:
+    - identifier: events
+      name: Events
+      url: /events/
+      weight: 10
+    - identifier: articles
+      name: Articles
+      url: /articles/
+      weight: 20
 #    - identifier: example
 #      name: example.org
 #      url: https://example.org
@@ -132,3 +135,10 @@ params:
 #    # guessSyntax: true
 #    # lineNos: true
 #    # style: monokai
+
+taxonomies:
+  event: events
+  article: articles
+
+security:
+  enableInlineShortcodes: true

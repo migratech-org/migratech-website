@@ -1,0 +1,51 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+</header>
+{{- end }}
+
+{{/* <ul class="terms-tags">
+    {{- $type := .Type }}
+    {{- range $key, $value := .Data.Terms.Alphabetical }}
+    {{- $name := .Name }}
+    {{- $count := .Count }}
+    {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+    </li>
+    {{- end }}
+    {{- end }}
+</ul> */}}
+
+
+{{/* Gather all pages under any article term */}}
+{{ $allPages := slice }}
+{{ range $term, $taxonomy := .Data.Terms }}
+{{ $allPages = $allPages | append $taxonomy.Pages }}
+{{ end }}
+
+{{ $allPages = $allPages | uniq }}
+{{/* {{ $allPages = $allPages | uniq }} */}}
+<ul>
+    {{ range sort $allPages "Date" "desc" }}
+    <article class="post-entry">
+        <header class="entry-header">
+            <h2 class="entry-hint-parent">{{ .Title }}</h2>
+        </header>
+        <footer class="entry-footer">
+            {{- partial "post_meta.html" . -}}
+        </footer>
+        <a class="entry-link" aria-label="post link to Meetup #1 - Tech workers rights 101"
+            href="{{ .RelPermalink }}"></a>
+    </article>
+    {{ end }}
+</ul>
+
+{{- end }}{{/* end main */ -}}

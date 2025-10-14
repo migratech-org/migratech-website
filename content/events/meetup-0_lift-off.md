@@ -4,6 +4,7 @@ date: "2024-12-10"
 description: "Our soft-launch meetup."
 tags: []
 ShowToc: true
+events: ["monthly"]
 ---
 
 ## Presentations
