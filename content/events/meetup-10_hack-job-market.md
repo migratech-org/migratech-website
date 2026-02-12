@@ -1,7 +1,7 @@
 ---
 title: "Meetup #10 - Hack Job Market for Tech migrants"
 date: "2026-02-10"
-description: "Let's meet and get to know each other"
+description: "Looking from different angels when looking for a job"
 tags: []
 ShowToc: true
 events: ["monthly"]
