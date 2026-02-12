@@ -1,0 +1,2 @@
+{{ $kanbanJS := resources.Get "js/scripts.js" | js.Build }}
+<script src="{{ $kanbanJS.RelPermalink }}"></script>

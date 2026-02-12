@@ -1,0 +1,41 @@
+{{ $raw := .Inner | chomp }}
+{{ $columns := slice }}
+
+{{ range split $raw "\n\n" }}
+  {{ if . }}
+    {{ $lines := split . "\n" }}
+    {{ $header := index $lines 0 }}
+    {{ $cards := slice }}
+    
+    {{ range after 1 $lines }}
+      {{ if hasPrefix . "- " }}
+        {{ $cards = $cards | append (strings.TrimPrefix "- " .) }}
+      {{ end }}
+    {{ end }}
+    
+    {{ $column := dict 
+      "title" (strings.TrimPrefix "[" (strings.TrimSuffix "]" $header))
+      "cards" $cards
+    }}
+    {{ $columns = $columns | append $column }}
+  {{ end }}
+{{ end }}
+
+<div class="kanban-board" data-kanban>
+  {{ range $columns }}
+    {{ $colTitle := .title }}  {{/* ← Capture column title here */}}
+    <div class="kanban-column" data-column="{{ $colTitle | urlize }}">
+      <div class="kanban-column-title">{{ $colTitle }}</div>
+      <div class="kanban-cards" data-droppable>
+        {{ range $idx, $card := .cards }}
+        <div 
+          class="kanban-card" 
+          draggable="true"
+          data-card-id="{{ $idx }}"
+          data-column="{{ $colTitle | urlize }}"
+        >{{ $card | markdownify }}</div>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</div>
